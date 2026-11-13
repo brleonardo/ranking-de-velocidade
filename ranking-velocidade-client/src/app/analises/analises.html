@@ -1,0 +1,75 @@
+<div class="analises-container">
+    <mat-card appearance="outlined">
+        <mat-card-header>
+            <mat-card-title>Ranking</mat-card-title>
+        </mat-card-header>
+
+        <table mat-table [dataSource]="dataSource.ranking" class="mat-shadow-2">
+
+            <ng-container matColumnDef="Gravidade">
+                <th mat-header-cell *matHeaderCellDef> Gravidade </th>
+                <td mat-cell *matCellDef="let element"> {{element.gravidade}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="Placa">
+                <th mat-header-cell *matHeaderCellDef> Placa </th>
+                <td mat-cell *matCellDef="let element"> {{element.placa}} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="colunasRanking"></tr>
+            <tr mat-row *matRowDef="let row; columns: colunasRanking;"></tr>
+        </table>
+    </mat-card>
+
+    <mat-card appearance="outlined">
+        <mat-card-header>
+            <mat-card-title>Episódios</mat-card-title>
+        </mat-card-header>
+
+        <table mat-table [dataSource]="dataSource.episodios" class="mat-shadow-2">
+
+            <ng-container matColumnDef="Gravidade">
+                <th mat-header-cell *matHeaderCellDef> Gravidade </th>
+                <td mat-cell *matCellDef="let element"> {{element.gravidade}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="Placa">
+                <th mat-header-cell *matHeaderCellDef> Placa </th>
+                <td mat-cell *matCellDef="let element"> {{element.placa}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="Inicio">
+                <th mat-header-cell *matHeaderCellDef> Início </th>
+                <td mat-cell *matCellDef="let element"> {{element.inicio}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="Fim">
+                <th mat-header-cell *matHeaderCellDef> Fim </th>
+                <td mat-cell *matCellDef="let element"> {{element.fim}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="Duracao">
+                <th mat-header-cell *matHeaderCellDef> Duração </th>
+                <td mat-cell *matCellDef="let element"> {{element.duracao}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="VelocidadeMaxima">
+                <th mat-header-cell *matHeaderCellDef> Velocidade Máxima </th>
+                <td mat-cell *matCellDef="let element"> {{element.fim}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="ExcessoMaximo">
+                <th mat-header-cell *matHeaderCellDef> Excesso Máximo </th>
+                <td mat-cell *matCellDef="let element"> {{element.duracao}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="Leituras">
+                <th mat-header-cell *matHeaderCellDef> Leituras </th>
+                <td mat-cell *matCellDef="let element"> {{element.leituras}} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="colunasEpisodios"></tr>
+            <tr mat-row *matRowDef="let row; columns: colunasEpisodios;"></tr>
+        </table>
+    </mat-card>
+</div>

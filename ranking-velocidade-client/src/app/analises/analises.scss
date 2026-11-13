@@ -1,0 +1,10 @@
+.analises-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+
+    .upload-btn {
+        margin: 12px;
+    }
+}

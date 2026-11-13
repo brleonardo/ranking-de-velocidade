@@ -3,6 +3,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { UploadService } from '../services/upload';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-upload',
@@ -12,6 +13,7 @@ import { UploadService } from '../services/upload';
 })
 export class Upload {
   private uploadService = inject(UploadService);
+  private router = inject(Router);
 
   arquivo: File | null = null;
 
@@ -30,6 +32,11 @@ export class Upload {
     this.uploadService.uploadArquivo(this.arquivo).subscribe({
       next: (response) => {
         console.log('Upload successful!', response);
+        this.router.navigate(['/analises'], {
+          state: {
+            data: response
+          }
+        });
       },
       error: (error) => {
         console.error('Upload failed!', error);
