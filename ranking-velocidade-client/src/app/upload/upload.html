@@ -1,0 +1,12 @@
+<div class="upload-container">
+    <mat-card appearance="outlined">
+        <mat-card-header>
+            <mat-card-title>Enviar arquivo</mat-card-title>
+        </mat-card-header>
+        <input #fileInput type="file" hidden (change)="onFileSelected($event)" />
+        <button matFab extended class="upload-btn" (click)="fileInput.click()">
+            <mat-icon>upload_file</mat-icon>
+            Escolher arquivo
+        </button>
+    </mat-card>
+</div>
