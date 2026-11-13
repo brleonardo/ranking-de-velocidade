@@ -20,7 +20,6 @@ export interface PeriodicElement {
 export class Analises {
   colunasRanking: string[] = ['Gravidade', 'Placa'];
   colunasEpisodios: string[] = ['Gravidade', 'Placa', 'Inicio', 'Fim', 'Duracao', 'VelocidadeMaxima', 'ExcessoMaximo', 'Leituras'];
-
   dataSource;
 
   private router = inject(Router);
@@ -31,7 +30,6 @@ export class Analises {
     const response = navigation?.extras.state?.['data'];
 
     if (response) {
-      console.log(response);
       this.dataSource = response;
     }
   }

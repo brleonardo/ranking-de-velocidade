@@ -1,25 +1,38 @@
 <div class="analises-container">
-    <mat-card appearance="outlined">
-        <mat-card-header>
-            <mat-card-title>Ranking</mat-card-title>
-        </mat-card-header>
+    <div id="right-side-containers">
+        <mat-card appearance="outlined">
+            <mat-card-header>
+                <mat-card-title>Resumo</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <p>Linhas lidas: {{dataSource.resumo.linhasLidas}}</p>
+                <p>Linhas válidas: {{dataSource.resumo.linhasValidas}}</p>
+                <p>Total episódios: {{dataSource.resumo.totalEpisodios}}</p>
+            </mat-card-content>
+        </mat-card>
 
-        <table mat-table [dataSource]="dataSource.ranking" class="mat-shadow-2">
+        <mat-card appearance="outlined">
+            <mat-card-header>
+                <mat-card-title>Ranking</mat-card-title>
+            </mat-card-header>
 
-            <ng-container matColumnDef="Gravidade">
-                <th mat-header-cell *matHeaderCellDef> Gravidade </th>
-                <td mat-cell *matCellDef="let element"> {{element.gravidade}} </td>
-            </ng-container>
+            <table mat-table [dataSource]="dataSource.ranking" class="mat-shadow-2">
 
-            <ng-container matColumnDef="Placa">
-                <th mat-header-cell *matHeaderCellDef> Placa </th>
-                <td mat-cell *matCellDef="let element"> {{element.placa}} </td>
-            </ng-container>
+                <ng-container matColumnDef="Gravidade">
+                    <th mat-header-cell *matHeaderCellDef> Gravidade </th>
+                    <td mat-cell *matCellDef="let element"> {{element.gravidade}} </td>
+                </ng-container>
 
-            <tr mat-header-row *matHeaderRowDef="colunasRanking"></tr>
-            <tr mat-row *matRowDef="let row; columns: colunasRanking;"></tr>
-        </table>
-    </mat-card>
+                <ng-container matColumnDef="Placa">
+                    <th mat-header-cell *matHeaderCellDef> Placa </th>
+                    <td mat-cell *matCellDef="let element"> {{element.placa}} </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="colunasRanking"></tr>
+                <tr mat-row *matRowDef="let row; columns: colunasRanking;"></tr>
+            </table>
+        </mat-card>
+    </div>
 
     <mat-card appearance="outlined">
         <mat-card-header>
